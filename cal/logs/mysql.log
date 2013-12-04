@@ -1,0 +1,1253 @@
+2013-12-03T13:19:19+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '4)' at line 1
+Query string: INSERT INTO mycal_events VALUES (NULL,DEFAULT,'Bourassa','','', '2','',2,DEFAULT,0,0,DEFAULT,'2013-12-05','9999-00-00',DEFAULT,'14:00','99:00',0,0,0,0,'9999-00-00',-1,'admin@admin.ca','2013-12-03',DEFAULT,DEFAULT,2,,4)
+
+2013-12-03T13:19:26+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '4)' at line 1
+Query string: INSERT INTO mycal_events VALUES (NULL,DEFAULT,'Bourassa','','', '2','',2,DEFAULT,0,0,DEFAULT,'2013-12-05','9999-00-00',DEFAULT,'14:00','99:00',0,0,0,0,'9999-00-00',-1,'admin@admin.ca','2013-12-03',DEFAULT,DEFAULT,2,,4)
+
+2013-12-03T13:20:08+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '4)' at line 1
+Query string: INSERT INTO mycal_events VALUES (NULL,DEFAULT,'Gary','','', '2','',2,DEFAULT,0,0,DEFAULT,'2013-12-05','9999-00-00',DEFAULT,'15:00','99:00',0,0,0,0,'9999-00-00',-1,'admin@admin.ca','2013-12-03',DEFAULT,DEFAULT,2,,4)
+
+2013-12-03T13:51:24+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1',eleve_id = 'asdasd',circuit_id = 
+					'3'
+					WHERE event_id=67' at line 2
+Query string: UPDATE mycal_events
+					SET title='Gary', venue='', description='', employe='' , approved=0, private=0, category_id=1, user_id=2, not_mail='admin@admin.ca', editor='admin', s_date='2013-12-04', e_date='9999-00-00', s_time='14:00', e_time='99:00', r_type=0, r_interval=0, r_period=0, r_month=0, r_until='9999-00-00', notify=-1, m_date='2013-12-03,employee_id = '1',eleve_id = 'asdasd',circuit_id = 
+					'3'
+					WHERE event_id=67
+
+2013-12-03T13:58:35+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1',eleve_id = '3',circuit_id = 
+					'3'
+					WHERE event_id=67' at line 2
+Query string: UPDATE mycal_events
+					SET title='Gary', venue='', description='', employe='' , approved=0, private=0, category_id=1, user_id=2, not_mail='admin@admin.ca', editor='admin', s_date='2013-12-04', e_date='9999-00-00', s_time='14:00', e_time='99:00', r_type=0, r_interval=0, r_period=0, r_month=0, r_until='9999-00-00', notify=-1, m_date='2013-12-03,employee_id = '1',eleve_id = '3',circuit_id = 
+					'3'
+					WHERE event_id=67
+
+2013-12-03T14:03:16+01:00
+Script name: /kcal/index.php
+MySQL error: Unknown column 'circuit_id' in 'field list'
+Query string: UPDATE mycal_events
+					SET title='Gary', venue='', description='', employe='' , approved=0, private=0, category_id=1, user_id=2, not_mail='admin@admin.ca', editor='admin', s_date='2013-12-04', e_date='9999-00-00', s_time='14:00', e_time='99:00', r_type=0, r_interval=0, r_period=0, r_month=0, r_until='9999-00-00', notify=-1, m_date='2013-12-03',employee_id = '1',eleve_id = '3',circuit_id = 
+					'3'
+					WHERE event_id=67
+
+2013-12-04T09:37:42+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe em ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:12+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:12+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:13+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:14+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:31+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	LEFT JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:38:40+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	LEFT JOIN mycal_employe emp ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
+2013-12-04T09:39:29+01:00
+Script name: /kcal/index.php
+MySQL error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c' at line 39
+Query string: SELECT
+		e.s_date AS sda,
+		e.e_date AS eda,
+		DATE_FORMAT(e.s_time,'%H:%i') AS sti,
+		DATE_FORMAT(e.e_time,'%H:%i') AS eti,
+		e.r_type AS r_t,
+		e.r_interval AS r_i,
+		e.r_period AS r_p,
+		e.r_month AS r_m,
+		e.r_until AS r_u,
+		e.notify AS rem,
+		e.employee_id AS emp_id,
+		e.not_mail AS rml,
+		e.a_date AS ada,
+		e.m_date AS mda,
+		e.event_id AS eid,
+		e.event_type AS typ,
+		e.title AS tit,
+		e.category_id AS cid,
+		e.venue AS ven,
+		e.user_id AS uid,
+		e.editor AS edr,
+		e.description AS des,
+		e.approved AS apd,
+		e.private AS pri,
+		e.checked AS chd,
+		e.x_dates AS xda,
+		c.name AS cnm,
+		c.approve AS app,
+		c.sequence AS seq,
+		c.rpeat AS rpt,
+		c.color AS cco,
+		c.background AS cbg,
+		c.chbox AS cbx,
+		c.chlabel AS clb,
+		c.chmark AS cmk,
+		u.user_name AS una,
+		u.color AS uco
+		emp.EMPLOYENOM as emp_name
+	FROM mycal_events e
+	INNER JOIN mycal_categories c ON c.category_id = e.category_id
+	INNER JOIN mycal_users u ON u.user_id = e.user_id
+	INNER JOIN mycal_employe em ON emp.EMPLOYEID = e.employee_id
+	WHERE e.status >= 0 AND c.public = 1
+		AND c.rpeat = 0
+		AND e.r_type = 0
+		AND ((e.s_date <= '2013-12-17') AND (IF(e.e_date != '9999-00-00', e.e_date, e.s_date) >= '2013-12-04') )
+	ORDER BY
+		e.s_date
+
